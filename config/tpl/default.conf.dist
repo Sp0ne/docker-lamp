@@ -1,0 +1,9 @@
+<VirtualHost *:80>
+    NameVirtualHost *:80
+    ServerAdmin toor@localhost
+    DocumentRoot {{HTTP_PATH}}
+    ServerName {{HTTP_HOST}}
+	<Directory {{HTTP_PATH}}>
+		AllowOverride all
+	</Directory>
+</VirtualHost>

@@ -1,0 +1,4 @@
+.idea
+/var/
+/config/vhosts/*.conf
+*.env

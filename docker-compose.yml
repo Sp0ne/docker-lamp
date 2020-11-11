@@ -1,0 +1,78 @@
+version: '3'
+
+services:
+    webserver:
+        build:
+            context: ./bin/php/${PHP_VERSION}
+        container_name: '${PROJECT_NAME}-webserver-${PHP_VERSION}'
+        restart: 'always'
+        working_dir: "/var/www"
+        ports:
+            - "${LOCAL_HOST_PORT}:80"
+        links:
+            - database
+        environment:
+            PMA_PORT: ${PMA_PORT}
+        volumes:
+            # projects folder
+            - "${PROJECT_PATH}:/var/www"
+            - "${PROJECT_PATH_LOCALHOST}:/var/www/html"
+            # apache vhosts
+            - "${APACHE_VHOSTS_DIR}:/etc/apache2/sites-enabled"
+            - "./bin/php/${PHP_VERSION}/php.ini:/usr/local/etc/php/php.ini"
+            - "${APACHE_LOG_DIR}:/var/log/apache2"
+            # TODO
+            # ssh git auth
+            # - "$SSH_AUTH_SOCK:/ssh-agent"
+            # - "~/.ssh/id_rsa:/home/www-data/private_key"
+            # bitbucket auth
+            # - "~/.ssh:/home/www-data/.ssh"
+            # - "~/.composer:/home/www-data/.composer"
+
+    portainer:
+        image: "portainer/portainer"
+        container_name: "${PROJECT_NAME}-portainer"
+        restart: "no"
+        ports:
+            - "${PORTAINER_PORT}:9000"
+        volumes:
+            - "/var/run/docker.sock:/var/run/docker.sock"
+            - "./var/portainer-data:/data"
+        networks:
+            - "default"
+
+    database:
+        build:
+            context: "./bin/${DATABASE}"
+        container_name: '${PROJECT_NAME}-database-${DATABASE}'
+        restart: 'no'
+        ports:
+            - "${MYSQL_PORT}:3306"
+        volumes:
+            - "./var/mysql:/var/lib/mysql"
+            - "${MYSQL_LOG_DIR}:/var/log/mysql"
+        environment:
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+
+    phpmyadmin:
+        image: "phpmyadmin/phpmyadmin"
+        container_name: "${PROJECT_NAME}-phpmyadmin"
+        hostname: "${PROJECT_NAME}-phpmyadmin"
+        restart: "no"
+        links:
+            - "database"
+        environment:
+            PMA_HOST: "database"
+            PMA_PORT: "3306"
+            PMA_USER: "root"
+            PMA_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+        ports:
+            - "${PMA_PORT}:80"
+        networks:
+            - "default"

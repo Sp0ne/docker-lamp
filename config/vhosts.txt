@@ -1,0 +1,1 @@
+my-project.local|\/var\/www\/my-project\/web
