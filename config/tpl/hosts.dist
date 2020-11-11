@@ -1,9 +1,2 @@
-# CJ
-127.0.0.1 carrieres-juridiques.local
-127.0.0.1 manager.carrieres-juridiques.local
-127.0.0.1 solutions.carrieres-juridiques.local
-# FYLLM
-127.0.0.1 findyourllm.local
-127.0.0.1 manager.findyourllm.local
-# LPJ
-127.0.0.1 lepetitjuriste.local
+# YOURS PROJECTS
+127.0.0.1 my-project.local
