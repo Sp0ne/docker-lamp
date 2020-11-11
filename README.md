@@ -1,10 +1,9 @@
-# 🐳 Docker-lamp
+# 🐳 Docker-lamp &middot; [![Latest Github release](https://img.shields.io/github/release/Sp0ne/docker-lamp.svg)](https://github.com/Sp0ne/docker-lamp/releases/latest)
+=====
 
 Basic LAMP stack environment built using Docker Compose.
 
-**💊 v.1**
-
-**🚨 Information : This Docker Stack is build for PERSONAL local development and NOT FOR PRODUCTION USAGE**
+**🚨 Important : This Docker Stack is build for PERSONAL local development and NOT FOR PRODUCTION USAGE**
 
 ---
 
