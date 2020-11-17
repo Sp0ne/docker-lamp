@@ -9,6 +9,7 @@ Basic LAMP stack environment built using Docker Compose.
 ### 📌 Table of Content
 
 - [🐳 Docker-lamp](#---docker-lamp)
+    + [💻 Requirement](#---requirement)
     + [🗃 Introduction](#---introduction)
     + [💾 Installation / Quick start](#---installation---quick-start)
     + [💫 Configuration and Usage](#---configuration-and-usage)
@@ -16,6 +17,17 @@ Basic LAMP stack environment built using Docker Compose.
       - [Entry Point](#entry-point)
       - [CMD Shortcut](#cmd-shortcut)
     + [🍭 CREDITS & SUPPORT](#---credits---support)
+
+---
+
+### 💻 Requirement
+
+Assume you have / Tested on :  
+
+* Ubuntu 20.04 LTS
+* Docker version 19.03.13
+* Docker Compose version 3 [(see compatibility)](https://docs.docker.com/compose/compose-file/compose-versioning/)
+* ☕ / 🍵
 
 ---
 
@@ -124,6 +136,11 @@ If this project help you, feel free to give me a cup of coffee :)
 
 - [☕ Buy me a coffee](https://www.buymeacoffee.com/vincesio)
 - [🎁 Feel free](https://www.paypal.me/vincesio/5)
+
+And dont forget: [KISS](https://en.wikipedia.org/wiki/KISS_principle), 
+[DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) & 
+[CLEAN CODE](https://odan.github.io/2019/12/06/php-best-practice-2019.html)
+
 
 ---
 
