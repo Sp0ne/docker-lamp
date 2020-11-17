@@ -71,19 +71,19 @@ You can modify them by creating (Step 2.) .env file in your root directory.
 # 1
 ➜ nano /config/vhosts.txt
 # Add your URL and PATH with delimiter: `|` 
-my-project.local|\/var\/www\/my-project\/web
+my-project.localhost|\/var\/www\/my-project\/web
 
 # 2
 ➜ make generate-vhosts
 ...
 Modify your /etc/host file with these lines:
-127.0.0.1 my-project.local
+127.0.0.1 my-project.localhost
 ...
 
 # 3
 ➜ sudo nano /etc/hosts
 127.0.0.1 localhost # Paste your host line after this line
-127.0.0.1 my-project.local
+127.0.0.1 my-project.localhost
 ```
 
 #### CMD Shortcut
