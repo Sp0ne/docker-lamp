@@ -3,7 +3,7 @@ version: '3'
 services:
     webserver:
         build:
-            context: ./bin/php/${PHP_VERSION}
+            context: ./docker/php/${PHP_VERSION}
         container_name: '${PROJECT_NAME}-webserver-${PHP_VERSION}'
         restart: 'always'
         working_dir: "${PROJECT_WORKING_DIR}"
@@ -19,7 +19,7 @@ services:
             - "${PROJECT_PATH_LOCALHOST}:/var/www/html"
             # apache vhosts
             - "${APACHE_VHOSTS_DIR}:/etc/apache2/sites-enabled"
-            - "./bin/php/${PHP_VERSION}/php.ini:/usr/local/etc/php/php.ini"
+            - "./docker/php/${PHP_VERSION}/php.ini:/usr/local/etc/php/php.ini"
             - "${APACHE_LOG_DIR}:/var/log/apache2"
             # TODO
             # ssh git auth
@@ -43,7 +43,7 @@ services:
 
     database:
         build:
-            context: "./bin/${DATABASE}"
+            context: "./docker/${DATABASE}"
         container_name: '${PROJECT_NAME}-database-${DATABASE}'
         restart: 'no'
         ports:

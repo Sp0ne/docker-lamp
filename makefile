@@ -9,19 +9,19 @@ env: ## Init Env file
 	cp .env.dist .env
 
 run: ## Start docker
-	./console/run.sh
+	./sh/run.sh
 
 run-build: ## Build docker and start it
-	./console/run.sh -f
+	./sh/run.sh -f
 
 run-php: ## Access into your container php
-	./console/run-php.sh
+	./sh/run-php.sh
 
 generate-vhosts: ## Create vhosts files .conf
-	./console/run-vhosts.sh
+	./sh/run-vhosts.sh
 
 check-vhosts: ## Check if url is available
-	./console/run-vhosts-check.sh
+	./sh/run-vhosts-check.sh
 
 refresh-repos: ## Git Pull on ALL FOLDER of project
-	./console/git-refresh-projects.sh
+	./sh/git-refresh-projects.sh

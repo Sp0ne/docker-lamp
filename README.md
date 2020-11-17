@@ -72,7 +72,7 @@ Now you can access to your environnement:
 This package comes with default configuration options. 
 You can modify them by creating (Step 2.) .env file in your root directory. 
 
-> PHP_INI: In each PHP Bin  you can define your custom php.ini `/bin/{PHP_VERSION}/php.ini` to meet your requirements.
+> PHP_INI: In each PHP Bin  you can define your custom php.ini `/docker/{PHP_VERSION}/php.ini` to meet your requirements.
 
 #### Entry Point
 
