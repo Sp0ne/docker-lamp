@@ -141,6 +141,7 @@ And dont forget: [KISS](https://en.wikipedia.org/wiki/KISS_principle),
 [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) & 
 [CLEAN CODE](https://odan.github.io/2019/12/06/php-best-practice-2019.html)
 
+**Spécial thanks to @Medzoner and @floyoops !**
 
 ---
 
