@@ -8,15 +8,16 @@ Basic LAMP stack environment built using Docker Compose.
 
 ### 📌 Table of Content
 
-- [🐳 Docker-lamp](#---docker-lamp)
-    + [💻 Requirement](#---requirement)
-    + [🗃 Introduction](#---introduction)
-    + [💾 Installation / Quick start](#---installation---quick-start)
-    + [💫 Configuration and Usage](#---configuration-and-usage)
+- [🐳 Docker-lamp](#-docker-lamp--)
+    + [💻 Requirement](#-requirement)
+    + [🗃 Introduction](#-introduction)
+    + [💾 Installation / Quick start](#-installation--quick-start)
+    + [💫 Configuration and Usage](#-configuration-and-usage)
       - [Configuration](#configuration)
       - [Entry Point](#entry-point)
+      - [PHP INI](#php-ini)
       - [CMD Shortcut](#cmd-shortcut)
-    + [🍭 CREDITS & SUPPORT](#---credits---support)
+    + [🍭 CREDITS & SUPPORT](#-credits--support)
 
 ---
 
@@ -72,8 +73,6 @@ Now you can access to your environnement:
 This package comes with default configuration options. 
 You can modify them by creating (Step 2.) .env file in your root directory. 
 
-> PHP_INI: In each PHP Bin  you can define your custom php.ini `/docker/{PHP_VERSION}/php.ini` to meet your requirements.
-
 #### Entry Point
 
 1. Add yours vhosts URL and ENTRYPOINT Folder in `./config/vhosts.txt`:
@@ -97,6 +96,11 @@ Modify your /etc/host file with these lines:
 127.0.0.1 localhost # Paste your host line after this line
 127.0.0.1 my-project.localhost
 ```
+
+#### PHP INI
+
+> PHP_INI: In each PHP Bin  you can define your custom php.ini `/docker/{PHP_VERSION}/php.ini` to meet your requirements.
+
 
 #### CMD Shortcut
 
@@ -140,6 +144,8 @@ If this project help you, feel free to give me a cup of coffee :)
 And dont forget: [KISS](https://en.wikipedia.org/wiki/KISS_principle), 
 [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) & 
 [CLEAN CODE](https://odan.github.io/2019/12/06/php-best-practice-2019.html)
+
+---
 
 **Spécial thanks to @Medzoner and @floyoops !**
 
