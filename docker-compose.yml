@@ -5,7 +5,7 @@ services:
         build:
             context: ./docker/php/${PHP_VERSION}
         container_name: '${PROJECT_NAME}-webserver-${PHP_VERSION}'
-        restart: 'always'
+        restart: "no"
         working_dir: "${PROJECT_WORKING_DIR}"
         ports:
             - "${LOCAL_HOST_PORT}:80"
